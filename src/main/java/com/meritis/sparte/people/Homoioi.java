@@ -23,7 +23,7 @@ public class Homoioi implements Citoyen {
 
     @Override
     public String name() {
-        return name;
+        return "Homioi " + name;
     }
 
     public void equipeArmure(Armure armure) {

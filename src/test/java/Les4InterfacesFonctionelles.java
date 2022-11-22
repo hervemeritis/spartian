@@ -1,4 +1,5 @@
 import com.meritis.sparte.armement.Bouclier;
+import com.meritis.sparte.people.Citoyen;
 import com.meritis.sparte.people.Homoioi;
 import com.meritis.sparte.people.JeuneCitoyen;
 import org.assertj.core.api.Assertions;
@@ -24,6 +25,23 @@ public class Les4InterfacesFonctionelles {
 
         //Then
         Assertions.assertThat(resultatTestAgogee).isTrue();
+    }
+
+    @Test
+    public void verification_citoyen_a_fait_son_agogee() {
+        //Given
+        Citoyen citoyenJeune = SpartiateFactory.jeuneLeonidas();
+        Citoyen citoyenHomioi = SpartiateFactory.leonidas();
+        Predicate<Citoyen> evaluationAgogee = null;
+
+        //When
+        boolean jeunePasFaitSonAgogee = evaluationAgogee.test(citoyenJeune);
+        boolean homioiFaitSonAgogee = evaluationAgogee.test(citoyenHomioi);
+
+        //Then
+        Assertions.assertThat(jeunePasFaitSonAgogee).isFalse();
+        Assertions.assertThat(homioiFaitSonAgogee).isTrue();
+
     }
 
     @Test
@@ -63,7 +81,7 @@ public class Les4InterfacesFonctionelles {
         String criLeonidas = cri.get();
 
         //Then
-        Assertions.assertThat(criLeonidas).isEqualTo("LEONIDAS AHOU !");
+        Assertions.assertThat(criLeonidas).isEqualTo("HOMIOI LEONIDAS AHOU !");
     }
 
 
