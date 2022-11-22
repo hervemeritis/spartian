@@ -1,4 +1,3 @@
-import com.meritis.sparte.armement.Bouclier;
 import com.meritis.sparte.people.Citoyen;
 import com.meritis.sparte.people.Homoioi;
 import com.meritis.sparte.people.JeuneCitoyen;
