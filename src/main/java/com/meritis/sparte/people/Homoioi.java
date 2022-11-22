@@ -1,8 +1,8 @@
 package com.meritis.sparte.people;
 
-import com.meritis.sparte.armement.Armure;
-import com.meritis.sparte.armement.Bouclier;
-import com.meritis.sparte.armement.Lance;
+import com.meritis.sparte.equipement.Armure;
+import com.meritis.sparte.equipement.Bouclier;
+import com.meritis.sparte.equipement.Lance;
 
 import java.util.Objects;
 
