@@ -13,6 +13,10 @@ public class JeuneCitoyen implements Citoyen {
         return new Homoioi(name);
     }
 
+    public boolean isAgogee() {
+        return this.age >= 20;
+    }
+
     @Override
     public boolean aFaitSonAgogee() {
         return false;

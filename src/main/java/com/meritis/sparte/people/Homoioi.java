@@ -30,6 +30,10 @@ public class Homoioi implements Citoyen {
         this.armure = armure;
     }
 
+    public void equipeFromHomoi() {
+        this.armure = new Armure();
+    }
+
     public void equipeBouclier(Bouclier bouclier) {
         this.bouclier = bouclier;
     }
@@ -44,5 +48,9 @@ public class Homoioi implements Citoyen {
 
     public boolean estEquipe() {
         return Objects.nonNull(armure) || Objects.nonNull(bouclier) || Objects.nonNull(lance);
+    }
+
+    public String faitSonHurlement() {
+        return name().toUpperCase() + " AHOU !";
     }
 }
