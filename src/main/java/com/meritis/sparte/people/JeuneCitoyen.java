@@ -1,16 +1,21 @@
 package com.meritis.sparte.people;
 
-public class JeuneCitoyen implements Citoyen {
+import java.util.HashSet;
+import java.util.Set;
+
+public final class JeuneCitoyen implements Citoyen {
     public final String name;
     public final int age;
+
+    public final Set<Competence> competences = new HashSet<>();
 
     public JeuneCitoyen(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Homoioi agogee() {
-        return new Homoioi(name);
+    public Citoyen agogee() {
+        return competences.size() >= 3 ? new Homoioi(name) : new Tresante(name);
     }
 
     public boolean isAgogee() {
@@ -20,6 +25,11 @@ public class JeuneCitoyen implements Citoyen {
     @Override
     public boolean aFaitSonAgogee() {
         return false;
+    }
+
+    @Override
+    public String faitSonHurlement() {
+        return "Moi " + name() + " J'apprend a être un Guerrier de Sparte AHOU ! ";
     }
 
     @Override

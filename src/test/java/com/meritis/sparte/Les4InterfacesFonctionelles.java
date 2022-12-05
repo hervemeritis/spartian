@@ -1,4 +1,5 @@
-import com.meritis.sparte.equipement.Armure;
+package com.meritis.sparte;
+
 import com.meritis.sparte.people.Citoyen;
 import com.meritis.sparte.people.Homoioi;
 import com.meritis.sparte.people.JeuneCitoyen;
@@ -48,10 +49,10 @@ public class Les4InterfacesFonctionelles {
     public void creation_function_pour_faire_passer_l_agogee_a_un_jeune() {
         //Given
         JeuneCitoyen leonidas = SpartiateFactory.jeuneLeonidas();
-        Function<JeuneCitoyen, Homoioi> agogee = JeuneCitoyen::agogee;
+        Function<JeuneCitoyen, Citoyen> agogee = JeuneCitoyen::agogee;
 
         //When
-        Homoioi homoioi = agogee.apply(leonidas);
+        Citoyen homoioi = agogee.apply(leonidas);
 
         //Then
         Assertions.assertThat(homoioi.name()).isEqualTo("Homioi Leonidas");

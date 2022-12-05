@@ -1,16 +1,36 @@
 package com.meritis.sparte.people;
 
+import com.meritis.sparte.armee.Grade;
 import com.meritis.sparte.equipement.Armure;
 import com.meritis.sparte.equipement.Bouclier;
 import com.meritis.sparte.equipement.Lance;
+import com.meritis.sparte.equipement.PrestigiousEquipement;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
-public class Homoioi implements Citoyen {
+public final class Homoioi implements Citoyen {
     private final String name;
     private Armure armure;
     private Bouclier bouclier;
     private Lance lance;
+
+    private final Set<PrestigiousEquipement> prestigiousEquipements = new HashSet<>();
+
+    private Grade grade;
+
+    public Homoioi(String name, Armure armure, Bouclier bouclier, Lance lance, Grade grade, long age) {
+        this.name = name;
+        this.armure = armure;
+        this.bouclier = bouclier;
+        this.lance = lance;
+        this.grade = grade;
+        this.age = age;
+    }
+
+    private long age;
 
     public Homoioi(String name) {
         this.name = name;
@@ -52,5 +72,9 @@ public class Homoioi implements Citoyen {
 
     public String faitSonHurlement() {
         return name().toUpperCase() + " AHOU !";
+    }
+
+    public void addPrestigiousEquipement(Collection<PrestigiousEquipement> prestigiousEquipements) {
+        this.prestigiousEquipements.addAll(prestigiousEquipements);
     }
 }

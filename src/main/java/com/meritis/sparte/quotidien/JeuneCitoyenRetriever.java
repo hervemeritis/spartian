@@ -1,2 +1,8 @@
-package com.meritis.sparte.quotidien;public interface JeuneCitoyenRetriever {
+package com.meritis.sparte.quotidien;
+
+import com.meritis.sparte.people.JeuneCitoyen;
+
+@FunctionalInterface
+public interface JeuneCitoyenRetriever {
+    JeuneCitoyen retrieveByName(String name);
 }
