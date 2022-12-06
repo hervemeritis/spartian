@@ -69,7 +69,7 @@ public class CompositionInterfaceFonctionnelle {
         JeuneCitoyen jeuneCitoyen = SpartiateFactory.jeuneLeonidas();
         Function<Citoyen, String> crier = Citoyen::faitSonHurlement;
         // Leonidas doit faire son cri en ajoutant JE SUIS UN GUERRIER DE SPARTE !
-        Function<JeuneCitoyen, String> criLeonidas = crier.compose(JeuneCitoyen::agogee);
+        Function<JeuneCitoyen, String> criLeonidas = null;
 
         //When
         String cri = criLeonidas.apply(jeuneCitoyen);
