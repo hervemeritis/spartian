@@ -4,10 +4,12 @@ import com.meritis.sparte.equipement.Tunique;
 
 public final class Tresante implements Citoyen {
     private final String name;
+    private final long age;
     private final Tunique tunique = new Tunique();
 
-    public Tresante(String name) {
+    public Tresante(String name, long age) {
         this.name = name;
+        this.age = age;
     }
 
     @Override

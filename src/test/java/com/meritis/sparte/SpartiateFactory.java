@@ -10,7 +10,7 @@ public class SpartiateFactory {
     private static final String LEONIDAS = "Leonidas";
 
     public static Homoioi leonidas() {
-        return new Homoioi(LEONIDAS);
+        return new Homoioi(LEONIDAS, 25);
     }
 
     public static JeuneCitoyen jeuneLeonidas() {

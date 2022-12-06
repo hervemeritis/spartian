@@ -15,7 +15,7 @@ public final class JeuneCitoyen implements Citoyen {
     }
 
     public Citoyen agogee() {
-        return competences.size() >= 3 ? new Homoioi(name) : new Tresante(name);
+        return competences.size() >= 3 ? new Homoioi(name, age) : new Tresante(name, age);
     }
 
     public boolean isAgogee() {

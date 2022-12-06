@@ -21,6 +21,8 @@ public final class Homoioi implements Citoyen {
 
     private Grade grade;
 
+    private long age;
+
     public Homoioi(String name, Armure armure, Bouclier bouclier, Lance lance, Grade grade, long age) {
         this.name = name;
         this.armure = armure;
@@ -30,10 +32,9 @@ public final class Homoioi implements Citoyen {
         this.age = age;
     }
 
-    private long age;
-
-    public Homoioi(String name) {
+    public Homoioi(String name, long age) {
         this.name = name;
+        this.age = age;
     }
 
     @Override
@@ -76,5 +77,16 @@ public final class Homoioi implements Citoyen {
 
     public void addPrestigiousEquipement(Collection<PrestigiousEquipement> prestigiousEquipements) {
         this.prestigiousEquipements.addAll(prestigiousEquipements);
+    }
+
+    @FunctionalInterface
+    public interface Name {
+        Age name(String name);
+    }
+
+    @FunctionalInterface
+    public interface Age {
+        Grade homioi(long age);
+        
     }
 }
