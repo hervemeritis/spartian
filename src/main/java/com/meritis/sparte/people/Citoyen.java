@@ -1,6 +1,6 @@
 package com.meritis.sparte.people;
 
-public sealed interface Citoyen extends Spartiate permits Homoioi, JeuneCitoyen, Tresante {
+public interface Citoyen extends Spartiate {
     boolean aFaitSonAgogee();
 
     String faitSonHurlement();
