@@ -78,6 +78,9 @@ public final class Homoioi implements Citoyen {
     public void addPrestigiousEquipement(Collection<PrestigiousEquipement> prestigiousEquipements) {
         this.prestigiousEquipements.addAll(prestigiousEquipements);
     }
+    public static Name initialize() {
+        return name -> age -> grade -> armure -> bouclier -> lance -> new Homoioi(name, armure, bouclier, lance, grade, age);
+    }
 
     @FunctionalInterface
     public interface Name {
@@ -86,7 +89,29 @@ public final class Homoioi implements Citoyen {
 
     @FunctionalInterface
     public interface Age {
-        Grade homioi(long age);
-        
+        GradeHomioi age(long age);
+    }
+
+    @FunctionalInterface
+    public interface GradeHomioi {
+        ArmureHomoi grade(Grade grade);
+    }
+
+    @FunctionalInterface
+    public interface ArmureHomoi {
+        BouclierHomioi amure(Armure armure);
+
+        default Homoioi fullyEquiped() {
+            return amure(new Armure()).bouclier(new Bouclier()).lance(new Lance());
+        }
+    }
+
+    @FunctionalInterface
+    public interface BouclierHomioi {
+        LanceHomioi bouclier(Bouclier bouclier);
+    }
+    @FunctionalInterface
+    public interface LanceHomioi {
+        Homoioi lance(Lance lance);
     }
 }

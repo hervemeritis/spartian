@@ -14,7 +14,7 @@ public final class Tresante implements Citoyen {
 
     @Override
     public boolean aFaitSonAgogee() {
-        return false;
+        return true;
     }
 
     @Override
